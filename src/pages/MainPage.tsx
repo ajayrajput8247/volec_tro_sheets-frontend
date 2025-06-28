@@ -40,7 +40,7 @@ const formatAIResponse = (content: string) => {
     if (title.toLowerCase().includes('official datasheet link')) {
       return (
         <div key={index} className="mb-4">
-          <h3 className="font-semibold text-blue-600">{title}</h3>
+          <h3 className="font-semibold text-blue-600 dark:text-blue-400">{title}</h3>
           <a
             href={bodyRaw}
             target="_blank"
@@ -55,12 +55,15 @@ const formatAIResponse = (content: string) => {
 
     return (
       <div key={index} className="mb-4">
-        <h3 className="font-semibold text-blue-600">{title}</h3>
-        <pre className="text-gray-800 whitespace-pre-wrap">{body}</pre>
+        <h3 className="font-semibold text-blue-600 dark:text-blue-400">{title}</h3>
+        <pre className="whitespace-pre-wrap text-gray-800 dark:text-gray-100">{body}</pre>
       </div>
     );
   });
 };
+
+
+ 
 
 const MainPage: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -83,7 +86,7 @@ const MainPage: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://bd3a-2402-8100-26f4-dd36-62-9f72-7aa5-f367.ngrok-free.app/volectro', {
+      const response = await fetch('https://volectrosheet-backend.onrender.com/volectro', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMessage.content })
@@ -132,19 +135,30 @@ const MainPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div
+  className="min-h-screen bg-background"
+  style={{
+    backgroundImage: "url('/rep.png')",
+    backgroundRepeat: 'repeat',
+    backgroundSize: '350px auto', 
+    backgroundPosition: 'center',
+    opacity: 0.9, 
+    zIndex: -10, 
+  }}
+>
       <Navbar onNewChat={handleNewChat} />
 
       <div className="container mx-auto px-4 py-8">
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
             <div className="mb-8">
-              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate__animated animate__fadeInDown">
                 Welcome to VolectroSheets
               </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Your AI-powered electronics learning companion
-              </p>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 animate__animated animate__fadeInDown">
+              Your AI-powered electronics learning companion
+          </p>
+
               <ElectronicComponents />
             </div>
           </div>
@@ -228,7 +242,7 @@ const MainPage: React.FC = () => {
 
       
         <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-4xl px-4">
-          <Card className="glass-card">
+          <Card className="glass-card animate__animated animate__fadeInUp">
             <CardContent className="p-4">
               <div className="flex space-x-4">
                 <Input

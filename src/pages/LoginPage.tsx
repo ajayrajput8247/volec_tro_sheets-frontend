@@ -60,22 +60,25 @@ const LoginPage: React.FC = () => {
 
       <div className="w-full max-w-md z-10">
         {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 pulse-glow">
-            <span className="text-white font-bold text-2xl">V</span>
-          </div>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <div className="text-center mb-8 animate__animated animate__fadeInDown">
+        <img
+  src="/public/favicon.png"
+  alt="VolectroSheets Logo"
+  className="w-16 h-16 rounded-full mx-auto mb-4  object-cover bg-transparent"
+/>
+
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate_animated animate_fadeInDown">
             VolectroSheets
           </h1>
-          <p className="text-muted-foreground mt-2">
-            Learn Electronics with AI
-          </p>
+          <p className="mt-2 text-gray-500 dark:text-gray-200 animate__animated animate__fadeInDown">
+  Learn Electronics with AI
+</p>
         </div>
 
         <Card className="liquid-glass-card animate-fade-in">
           <CardHeader className="text-center">
             <CardTitle className="text-foreground">Welcome</CardTitle>
-            <CardDescription className="text-muted-foreground">
+            <CardDescription className="text-muted-foreground  text-gray-500 dark:text-gray-200">
               Sign in to your account or create a new one
             </CardDescription>
           </CardHeader>

@@ -11,6 +11,12 @@ import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import BookmarkPage from "./pages/BookmarkPage";
 import NotFound from "./pages/NotFound";
+//for animation pupose on scroll and on render 
+import 'animate.css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
+AOS.init();
 
 const queryClient = new QueryClient();
 
