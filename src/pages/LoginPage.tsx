@@ -62,7 +62,7 @@ const LoginPage: React.FC = () => {
         {/* Logo */}
         <div className="text-center mb-8 animate__animated animate__fadeInDown">
         <img
-  src="/public/favicon.png"
+  src="/favicon.png"
   alt="VolectroSheets Logo"
   className="w-16 h-16 rounded-full mx-auto mb-4  object-cover bg-transparent"
 />
