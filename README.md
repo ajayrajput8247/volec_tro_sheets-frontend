@@ -23,20 +23,18 @@ VolectroSheets is a smart web app that helps electronics students and enthusiast
 | React.js     | Google Gemini API  | Firebase (Auth & Firestore) |
 | Tailwind CSS | TypeScript         | Ngrok (for backend tunneling), Dotenv |
 
-## testing :
-ngrok
-postman
+## Testing :
+Ngrok ,
+Postman
 
 ### 1. Clone the Repository
-
-```bash
 git clone https://github.com/yourusername/volectrosheets-frontend.git
 cd volectrosheets-frontend 
 
-2. Install Dependencies
+### 2. Install Dependencies
 npm install
 
-3. Set Up Environment Variables
+### 3. Set Up Environment Variables
 
 Create a .env file in the root:
 VITE_GEMINI_API_KEY=your_gemini_api_key
